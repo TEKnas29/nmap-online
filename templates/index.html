@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<style>
+			.holds-the-iframe {
+  				background:url(../images/loader.gif) center center no-repeat;
+ 			}
+		</style>
+		<script>
+			$('#search').keypress(function(event){
+	
+	var keycode = (event.keyCode ? event.keyCode : event.which);
+	if(keycode == '13'){
+				this.form.submit();	
+		}
+	event.stopPropagation();
+});
+
+		</script>
+	</head>
+	<body>
+	<div class="container">
+	<form action="" method="POST">
+	<div class="md-form mt-0">
+        <input class="form-control" type="text" placeholder="Search" name="search" id="search" aria-label="Search">
+		<input type="submit" name="">
+    </div>
+    </form>
+    {%if se%}
+		<h1>...........Done............</h1><hr>
+		<ol>
+		<li>{{search}}<br></li>
+		<li>{{details}}<br></li>
+		<li><b>Site Status:{{up}}</b></li><br>
+		<li><b>{{port}}</b></li><br>
+		<li><b>{{os}}</b></li><br>
+		<li><b>{{v}}</b></li><br>
+	{%endif%}
+
+
+
+    </div>
+
+
+	</body>
+</html>
